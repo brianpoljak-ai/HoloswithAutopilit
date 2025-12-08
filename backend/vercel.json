@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "src/server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "src/**"
+      }
     }
   ],
   "routes": [
@@ -11,12 +14,5 @@
       "src": "/(.*)",
       "dest": "src/server.js"
     }
-  ],
-  "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
-    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key",
-    "APP_BASE_URL": "@app_base_url",
-    "PORT": "3000"
-  }
+  ]
 }
