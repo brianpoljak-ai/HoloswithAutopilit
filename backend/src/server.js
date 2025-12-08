@@ -54,7 +54,7 @@ app.post('/api/workspaces', async (req, res) => {
       }
 
       const workspace = data?.[0];
-      const workspaceLink = `${process.env.APP_BASE_URL || 'http://localhost:3000'}/app/${workspace?.slug || ''}`;
+      const workspaceLink = `${process.env.SUPABASE_SERVICE_ROLE_KEY || 'http://localhost:3000'}/app/${workspace?.slug || ''}`;
 
       // TODO: create Supabase user and link owner_user_id (optional)
 
