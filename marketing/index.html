@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HolosCX — Signup</title>
+</head>
+<body>
+  <h1>HolosCX — Signup</h1>
+  <form name="holoscx-signup">
+    <label>Email: <input type="email" name="email" required /></label><br/>
+    <label>Full name: <input type="text" name="fullName" /></label><br/>
+    <label>Company: <input type="text" name="company" /></label><br/>
+    <input type="hidden" name="planTier" value="starter" />
+    <button type="submit">Create workspace</button>
+  </form>
+
+  <script>
+    // Optionally override backend URL for local testing
+    // window.HOLOS_BACKEND_URL = 'https://holos-autopilot-lvfxjikhp-brianpoljak-ais-projects.vercel.app'
+  </script>
+  <script src="/signup.js"></script>
+</body>
+</html>
