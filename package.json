@@ -7,19 +7,13 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
+    "start": "node -e \"console.log('This repo uses serverless functions; no long-running server to start')\"",
+    "dev": "echo 'Use Vercel dev or run a local server to test functions'",
     "build": "echo 'No build needed for serverless'"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.0.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "dotenv": "^16.0.3",
-    "body-parser": "^1.20.2",
-    "pg": "^8.11.0"
+    "dotenv": "^16.0.3"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+  "devDependencies": {}
 }
