@@ -25,7 +25,7 @@
     window.HOLOS_BACKEND_URL || 
     (typeof import?.meta?.env?.VITE_BACKEND_URL !== 'undefined' ? import.meta.env.VITE_BACKEND_URL : null) ||
     (typeof process?.env?.VITE_BACKEND_URL !== 'undefined' ? process.env.VITE_BACKEND_URL : null) ||
-    'http://localhost:5000';
+    'https://holos-autopilot-lvfxjikhp-brianpoljak-ais-projects.vercel.app';
 
   function serializeForm(form) {
     const data = {};
