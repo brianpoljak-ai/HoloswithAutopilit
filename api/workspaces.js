@@ -10,7 +10,7 @@ if (!supabaseUrl || !supabaseKey) {
   console.warn('Missing SUPABASE keys; endpoint will still accept requests but DB calls will fail. Fill .env with NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.');
 }
 
-const supabase = createClient(supabaseUrl || '', supabaseKey || '', { auth: { persistSession: false } });
+let supabase = null;
 
 export default async function handler(req, res) {
   // Handle CORS
@@ -40,6 +40,10 @@ export default async function handler(req, res) {
   try {
     // Insert into workspaces table. Requires the table/migration created in migrations/create_workspaces.sql
     if (supabaseUrl && supabaseKey) {
+      // Lazy-init supabase client so the module can be imported without env vars (useful for local tests)
+      if (!supabase) {
+        supabase = createClient(supabaseUrl, supabaseKey, { auth: { persistSession: false } });
+      }
       const insertRow = {
         name: workspaceName,
         slug: slug,
